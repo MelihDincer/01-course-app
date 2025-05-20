@@ -5,9 +5,12 @@ export default function MainLayout() {
     <div id="main-layout">
       <h1>Main Layout</h1>
       <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/courses">Courses</NavLink>
+        <NavLink to="/" end>
+          Home
+        </NavLink>
+        <NavLink to="about">About</NavLink>
+        <NavLink to="courses">Courses</NavLink>
+        <NavLink to="help">Help</NavLink>
         {/* <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/courses">Courses</Link> */}

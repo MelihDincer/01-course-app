@@ -8,6 +8,9 @@ import CoursesPage from "./pages/Courses";
 import HomePage from "./pages/Home";
 import MainLayout from "./Layout/MainLayout";
 import AboutPage from "./pages/About";
+import ContactPage from "./pages/help/ContactPage";
+import FaqPage from "./pages/help/FaqPage";
+import HelpLayout from "./Layout/HelpLayout";
 
 // const routers_1 = (
 //   <Route>
@@ -31,10 +34,19 @@ const router = createBrowserRouter([
     path: "/",
     element: <MainLayout />,
     children: [
-      { path: "/", element: <HomePage /> },
+      { index: true, element: <HomePage /> },
       { path: "home", element: <HomePage /> },
       { path: "about", element: <AboutPage /> },
       { path: "courses", element: <CoursesPage /> },
+      {
+        path: "help",
+        element: <HelpLayout />,
+        children: [
+          // { index: true, element: <ContactPage /> },
+          { path: "contact", element: <ContactPage /> },
+          { path: "faq", element: <FaqPage /> },
+        ],
+      },
     ],
   },
 ]);
