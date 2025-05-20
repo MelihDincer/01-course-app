@@ -1,17 +1,7 @@
-import { NavLink } from "react-router";
-
 export default function CoursesPage() {
   return (
     <>
-      <nav>
-        {/* <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/courses">Courses</Link> */}
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/courses">Courses</NavLink>
-      </nav>
-      <div>
+      <div id="courses">
         <h1>Courses</h1>
         <p className="lorem">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente

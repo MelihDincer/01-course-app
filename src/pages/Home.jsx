@@ -1,14 +1,7 @@
-import { NavLink } from "react-router";
-
 export default function HomePage() {
   return (
     <>
-      <nav>
-        <NavLink to="/">Home</NavLink>
-        <NavLink to="/about">About</NavLink>
-        <NavLink to="/courses">Courses</NavLink>
-      </nav>
-      <div>
+      <div id="home">
         <h1>Home</h1>
         <p className="lorem">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
