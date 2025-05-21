@@ -11,6 +11,7 @@ import AboutPage from "./pages/About";
 import ContactPage from "./pages/help/ContactPage";
 import FaqPage from "./pages/help/FaqPage";
 import HelpLayout from "./Layout/HelpLayout";
+import { coursesLoader } from "./pages/Courses";
 
 // const routers_1 = (
 //   <Route>
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "home", element: <HomePage /> },
       { path: "about", element: <AboutPage /> },
-      { path: "courses", element: <CoursesPage /> },
+      { path: "courses", element: <CoursesPage />, loader: coursesLoader },
       {
         path: "help",
         element: <HelpLayout />,
