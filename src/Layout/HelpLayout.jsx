@@ -1,4 +1,4 @@
-import { Link, Outlet } from "react-router";
+import { NavLink, Outlet } from "react-router";
 
 export default function HelpLayout() {
   return (
@@ -11,8 +11,8 @@ export default function HelpLayout() {
         nisi sint voluptates delectus iure.HELPHELPHELPHELPHELPHELP
       </p>
       <nav>
-        <Link to="contact">Contact</Link>
-        <Link to="faq">FAQ</Link>
+        <NavLink to="contact">Contact</NavLink>
+        <NavLink to="faq">FAQ</NavLink>
         {/* <Link to="/">Home</Link>
         <Link to="/about">About</Link>
         <Link to="/courses">Courses</Link> */}
