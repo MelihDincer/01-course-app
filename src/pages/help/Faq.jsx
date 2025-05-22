@@ -1,4 +1,4 @@
-export default function FaqPage() {
+export default function Faq() {
   return (
     <>
       <div id="faq">

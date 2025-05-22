@@ -126,4 +126,24 @@ form button {
   background: var(--primary);
   cursor: pointer;
   text-decoration: none;
+  margin-right: 5px;
+}
+
+.course-desc {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.icons {
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.icons span {
+  display: flex;
+  gap: 4px;
 }

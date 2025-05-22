@@ -1,20 +1,18 @@
-import {
-  createBrowserRouter,
-  createRoutesFromElements,
-  Route,
-  RouterProvider,
-} from "react-router";
-import CoursesPage from "./pages/Courses";
+import { createBrowserRouter, RouterProvider } from "react-router";
+import CoursesPage from "./pages/course/Courses";
 import HomePage from "./pages/Home";
-import MainLayout from "./Layout/MainLayout";
+import MainLayout from "./layouts/MainLayout";
 import AboutPage from "./pages/About";
-import ContactPage from "./pages/help/ContactPage";
-import FaqPage from "./pages/help/FaqPage";
-import HelpLayout from "./Layout/HelpLayout";
-import { coursesLoader } from "./pages/Courses";
+import ContactPage from "./pages/help/Contact";
+import FaqPage from "./pages/help/Faq";
+import HelpLayout from "./layouts/HelpLayout";
+import { coursesLoader } from "./pages/course/Courses";
 import CourseDetailsPage, {
   courseDetailsLoader,
-} from "./pages/CourseDetailsPage";
+} from "./pages/course/CourseDetails";
+import CourseLayout from "./layouts/CourseLayout";
+import CourseCreatePage from "./pages/course/CourseCreate";
+import CourseEditPage from "./pages/course/CourseEdit";
 
 // const routers_1 = (
 //   <Route>
@@ -41,12 +39,36 @@ const router = createBrowserRouter([
       { index: true, element: <HomePage /> },
       { path: "home", element: <HomePage /> },
       { path: "about", element: <AboutPage /> },
-      { path: "courses", element: <CoursesPage />, loader: coursesLoader },
+
       {
-        path: "courses/:courseid",
-        element: <CourseDetailsPage />,
-        loader: courseDetailsLoader,
+        path: "courses",
+        element: <CourseLayout />,
+        children: [
+          { index: true, element: <CoursesPage />, loader: coursesLoader },
+
+          {
+            id: "course-details",
+            path: ":courseid",
+            loader: courseDetailsLoader,
+            children: [
+              {
+                index: true,
+                element: <CourseDetailsPage />,
+              },
+              {
+                path: "edit",
+                element: <CourseEditPage />,
+              },
+            ],
+          },
+
+          {
+            path: "create",
+            element: <CourseCreatePage />,
+          },
+        ],
       },
+
       {
         path: "help",
         element: <HelpLayout />,
