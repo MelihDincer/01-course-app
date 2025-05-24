@@ -3,5 +3,5 @@ import CourseForm from "./CourseForm";
 
 export default function CourseEditPage() {
   const course = useRouteLoaderData("course-details");
-  return <CourseForm data={course} />;
+  return <CourseForm method="PUT" data={course} />;
 }

@@ -11,8 +11,9 @@ import CourseDetailsPage, {
   courseDetailsLoader,
 } from "./pages/course/CourseDetails";
 import CourseLayout from "./layouts/CourseLayout";
-import CourseCreatePage, { courseAction } from "./pages/course/CourseCreate";
+import CourseCreatePage from "./pages/course/CourseCreate";
 import CourseEditPage from "./pages/course/CourseEdit";
+import { courseAction } from "./pages/course/CourseForm";
 
 // const routers_1 = (
 //   <Route>
@@ -58,6 +59,7 @@ const router = createBrowserRouter([
               {
                 path: "edit",
                 element: <CourseEditPage />,
+                action: courseAction,
               },
             ],
           },
