@@ -1,7 +1,9 @@
-import { Form } from "react-router";
+import { Form, useNavigation } from "react-router";
 import { redirect } from "react-router";
 
 export default function CourseForm({ method, data }) {
+  const navigation = useNavigation();
+  const isSubmitting = navigation.state === "submitting";
   return (
     <Form method={method}>
       <div>
@@ -33,7 +35,9 @@ export default function CourseForm({ method, data }) {
           defaultValue={data ? data.description : ""}
         ></textarea>
       </div>
-      <button type="submit">Submit</button>
+      <button disabled={isSubmitting} type="submit">
+        {isSubmitting ? "Kayıt Ediliyor" : "Kaydet"}
+      </button>
     </Form>
   );
 }
@@ -41,7 +45,7 @@ export default function CourseForm({ method, data }) {
 export async function courseAction({ request, params }) {
   const data = await request.formData();
   const method = request.method;
-  console.log(method);
+
   let url = "http://localhost:5000/courses";
 
   if (method === "PUT") {

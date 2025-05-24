@@ -1,5 +1,5 @@
 import { createBrowserRouter, RouterProvider } from "react-router";
-import CoursesPage from "./pages/course/Courses";
+import CoursesPage, { courseDeleteAction } from "./pages/course/Courses";
 import HomePage from "./pages/Home";
 import MainLayout from "./layouts/MainLayout";
 import AboutPage from "./pages/About";
@@ -60,6 +60,10 @@ const router = createBrowserRouter([
                 path: "edit",
                 element: <CourseEditPage />,
                 action: courseAction,
+              },
+              {
+                path: "delete",
+                action: courseDeleteAction,
               },
             ],
           },
