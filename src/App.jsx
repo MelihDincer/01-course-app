@@ -14,6 +14,7 @@ import CourseLayout from "./layouts/CourseLayout";
 import CourseCreatePage from "./pages/course/CourseCreate";
 import CourseEditPage from "./pages/course/CourseEdit";
 import { courseAction } from "./pages/course/CourseForm";
+import NotFoundPage from "./pages/error/NotFoundPage";
 
 // const routers_1 = (
 //   <Route>
@@ -85,6 +86,7 @@ const router = createBrowserRouter([
           { path: "faq", element: <FaqPage /> },
         ],
       },
+      { path: "*", element: <NotFoundPage /> },
     ],
   },
 ]);

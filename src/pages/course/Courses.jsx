@@ -24,7 +24,9 @@ export default function CoursesPage() {
               <p>{item.description}</p>
               <Link to={"/courses/" + item.id}>Detay</Link>
               <Link to={item.id + "/edit"}>Edit</Link>
-              <button onClick={() => handleDelete(item.id)}>Delete</button>
+              <button id="btnDelete" onClick={() => handleDelete(item.id)}>
+                Delete
+              </button>
             </div>
           </div>
         ))}

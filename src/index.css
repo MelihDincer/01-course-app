@@ -129,6 +129,7 @@ button {
   text-decoration: none;
   margin-right: 5px;
   font-size: 12px;
+  font-family: "Open Sans", serif;
 }
 
 .course-desc {
@@ -148,4 +149,31 @@ button {
 .icons span {
   display: flex;
   gap: 4px;
+}
+
+#btnDelete {
+  border: 0;
+  padding: 10px;
+  border-radius: 4px;
+  color: #fff;
+  background: var(--primary);
+  cursor: pointer;
+  text-decoration: none;
+  margin-right: 5px;
+  font-size: 12px;
+  height: 37px;
+  font-family: "Open Sans", serif;
+}
+
+#error {
+  text-align: center;
+}
+
+.errors {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.errors li {
+  color: #ffeb00;
 }
