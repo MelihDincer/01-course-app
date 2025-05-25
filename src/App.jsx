@@ -15,6 +15,7 @@ import CourseCreatePage from "./pages/course/CourseCreate";
 import CourseEditPage from "./pages/course/CourseEdit";
 import { courseAction } from "./pages/course/CourseForm";
 import NotFoundPage from "./pages/error/NotFoundPage";
+import ErrorPage from "./pages/error/ErrorPage";
 
 // const routers_1 = (
 //   <Route>
@@ -45,6 +46,8 @@ const router = createBrowserRouter([
       {
         path: "courses",
         element: <CourseLayout />,
+        errorElement: <ErrorPage />,
+
         children: [
           { index: true, element: <CoursesPage />, loader: coursesLoader },
 

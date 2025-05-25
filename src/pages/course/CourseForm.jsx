@@ -55,7 +55,7 @@ export async function courseAction({ request, params }) {
   const data = await request.formData();
   const method = request.method;
 
-  let url = "http://localhost:5000/courses";
+  let url = "http://localhost:5001/courses";
 
   if (method === "PUT") {
     const courseid = params.courseid;
